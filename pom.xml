@@ -37,7 +37,7 @@
             <artifactId>ojdbc8</artifactId>
             <version>18.3.0.0.0</version>
             <scope>system</scope>
-            <systemPath>/root/JDBC/oracle-jdbc-tester-master/src/main/lib/ojdbc8.jar</systemPath>
+            <systemPath>/root/SSL_Tester_JDBC-main/src/main/lib/ojdbc8.jar</systemPath>
         </dependency>
 
 	<dependency>
@@ -45,14 +45,14 @@
             <artifactId>slf4j-api</artifactId>
             <version>1.7.9</version>
             <scope>system</scope>
-            <systemPath>/root/JDBC/oracle-jdbc-tester-master/src/main/lib/slf4j-api-1.7.9.jar</systemPath>
+            <systemPath>/root/SSL_Tester_JDBC-main/src/main/lib/slf4j-api-1.7.9.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>com.oracle</groupId>
             <artifactId>osdt_cert</artifactId>
             <version>3.1.0</version>
             <scope>system</scope>
-            <systemPath>/root/JDBC/oracle-jdbc-tester-master/src/main/lib/osdt_cert.jar</systemPath>
+            <systemPath>/root/SSL_Tester_JDBC-main/src/main/lib/osdt_cert.jar</systemPath>
         </dependency>
         
         <dependency>
@@ -60,7 +60,7 @@
             <artifactId>osdt_core</artifactId>
             <version>3.1.0</version>
             <scope>system</scope>
-            <systemPath>/root/JDBC/oracle-jdbc-tester-master/src/main/lib/osdt_core.jar</systemPath>
+            <systemPath>/root/SSL_Tester_JDBC-main/src/main/lib/osdt_core.jar</systemPath>
         </dependency>
         
         <dependency>
@@ -68,7 +68,7 @@
             <artifactId>oraclepki</artifactId>
             <version>3.1.0</version>
             <scope>system</scope>
-            <systemPath>/root/JDBC/oracle-jdbc-tester-master/src/main/lib/oraclepki.jar</systemPath>
+            <systemPath>/root/SSL_Tester_JDBC-main/src/main/lib/oraclepki.jar</systemPath>
         </dependency>
 
     </dependencies>
