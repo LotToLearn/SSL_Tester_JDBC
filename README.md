@@ -34,6 +34,9 @@ service iptables save
 
 ### Download release to run quick
 https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.3
+```
+wget https://github.com/LotToLearn/SSL_Tester_JDBC/releases/download/1.3/noah-ssl-jdbc-tester-1.3.jar
+```
 
 ### Manual install 
 Install Maven
