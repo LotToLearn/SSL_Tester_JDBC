@@ -1,8 +1,8 @@
 # Oracle SSL JDBC Tester
 ##### This in no way represents offical Oracle documentation, and views expressed are my own and do not represent anyone else
 
-``` This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
-https://github.com/aimtiaz11/oracle-jdbc-tester```
+This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
+https://github.com/aimtiaz11/oracle-jdbc-tester
 
 ### PRE-REQS
 ###### SSO WALLET NEEDS TO BE IN /usr/lib/oracle/11.2/client64/lib/network/admin DIRECTORY 
