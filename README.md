@@ -9,7 +9,6 @@ https://github.com/aimtiaz11/oracle-jdbc-tester
 
 Create wallet directory, and add .sso wallet (auto_login)
 ```
-/usr/lib/oracle/11.2/client64/lib/network/admin/cwallet.sso
 sudo mkdir -p /usr/lib/oracle/11.2/client64/lib/network/admin
 cd /usr/lib/oracle/11.2/client64/lib/network/admin
 ls /usr/lib/oracle/11.2/client64/lib/network/admin
