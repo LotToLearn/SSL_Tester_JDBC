@@ -1,7 +1,7 @@
 # Oracle SSL JDBC Tester
 ##### This in no way represents offical Oracle documentation, and views expressed are my own and do not represent anyone else
 
-### This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
+#### This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
 https://github.com/aimtiaz11/oracle-jdbc-tester
 
 ### PRE-REQS
