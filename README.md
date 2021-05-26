@@ -24,8 +24,8 @@ yum install jdk-16.x86_64 -y
 ```
 Allow SSL port on database server's iptables
 ```
- iptables -I INPUT -p tcp --dport <PORT> -j ACCEPT
- service iptables save
+iptables -I INPUT -p tcp --dport <PORT> -j ACCEPT
+service iptables save
 ```
 
 # JAR command to execute
