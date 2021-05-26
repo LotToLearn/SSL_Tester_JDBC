@@ -22,6 +22,15 @@ yum install java-1.8.0-openjdk-devel -y
 yum install jre1.8.x86_64 -y 
 yum install jdk-16.x86_64 -y
 ```
+Allow SSL port on database server's iptables
+```
+ iptables -I INPUT -p tcp --dport <PORT> -j ACCEPT
+```
+Make sure iptables restarts with changes
+```
+ vi /etc/sysconfig/iptables-config
+ IPTABLES_SAVE_ON_RESTART="yes"
+ ```
 # JAR command to execute
 ###### Must specify the connect string with the SSL_SERVER_CERT_DN parameter or it will fail!
 ```java -jar noah-ssl-jdbc-tester-1.3.jar jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=<HOSTNAME>)(PORT=<SSLPORT>))(CONNECT_DATA=(SERVICE_NAME=<SERVICENAME>))(SECURITY=(SSL_SERVER_CERT_DN='<CERT_DN_INFO>')))```
