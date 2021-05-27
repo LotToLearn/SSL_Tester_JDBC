@@ -1,3 +1,4 @@
+[![GitHub issues open](https://img.shields.io/github/issues/network-tools/shconfparser.svg?maxAge=2592000)](https://github.com/LotToLearn/SSL_Tester_JDBC/issues)
 #### The following is intended to outline a general product direction. It is intended for information purposes only. This in no way represents offical Oracle documentation, and views expressed are my own and do not represent anyone else. Issues and concerns will not be addressed by Oracle, but I will try my best to personally check the issues tab, feel free to reach out. 
 # Oracle SSL JDBC Tester for Windows and RHEL / Oracle Linux
 ### SSO auto-login wallets only are allowed, and database version 11g+
