@@ -226,3 +226,12 @@ ssl =
     )
   )
 ```
+
+
+
+# TO DO
+<ol>
+<li>Clean up README</li>
+<li>Manual install for Windows</li>
+<li>Link to DB SSL setup process</li>
+</ol>
