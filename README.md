@@ -29,7 +29,14 @@ service iptables save
 
 # JAR command to execute
 ###### Must specify the connect string with the SSL_SERVER_CERT_DN parameter or it will fail!
-```java -jar noah-ssl-jdbc-tester-1.3.jar jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=<HOSTNAME>)(PORT=<SSLPORT>))(CONNECT_DATA=(SERVICE_NAME=<SERVICENAME>))(SECURITY=(SSL_SERVER_CERT_DN='<CERT_DN_INFO>')))```
+
+For Linux
+```java -jar noah-ssl-jdbc-tester-1.4.jar jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=<HOSTNAME>)(PORT=<SSLPORT>))(CONNECT_DATA=(SERVICE_NAME=<SERVICENAME>))(SECURITY=(SSL_SERVER_CERT_DN='<CERT_DN_INFO>')))```
+
+For Windows
+```
+java -jar noah-ssl-jdbc-tester-1.4.jar 'jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=<HOSTNAME>)(PORT=<SSLPORT>))(CONNECT_DATA=(SERVICE_NAME=<SERVICENAME>))(SECURITY=(SSL_SERVER_CERT_DN="<CERT_DN_INFO>")))'
+```
 
 ### Download release to run quick
 https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.3
