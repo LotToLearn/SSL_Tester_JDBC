@@ -30,7 +30,7 @@ public class Main {
         properties.setProperty("oracle.net.ssl_cipher_suites", "(TLS_RSA_WITH_AES_256_CBC_SHA)"); 
         properties.setProperty("oracle.net.ssl_server_dn_match", "true"); 
         properties.setProperty("oracle.net.authentication_services","(TCPS)");
-        properties.setProperty("oracle.net.wallet_location", "(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=/usr/lib/oracle/11.2/client64/lib/network/admin)))");
+        properties.setProperty("oracle.net.wallet_location", "(SOURCE=(METHOD=FILE)(METHOD_DATA=(DIRECTORY=./wallet)))");
         try {
             LOG.info("****** Starting SSL JDBC Connection test *******");
             String sqlQuery = "select SYS_CONTEXT('USERENV','NETWORK_PROTOCOL') net_proto,sys_context('USERENV', 'AUTHENTICATED_IDENTITY') auth_identity,SYS_CONTEXT('USERENV','SESSION_USER') db_user,sys_context('USERENV','ENTERPRISE_IDENTITY') ent_identity from dual";
