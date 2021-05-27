@@ -1,12 +1,17 @@
+#### The following is intended to outline a general product direction. It is intended for information purposes only. This in no way represents offical Oracle documentation, and views expressed are my own and do not represent anyone else. Issues and concerns will not be addressed by Oracle, but I will try my best to personally check the issues tab, feel free to reach out. 
 # Oracle SSL JDBC Tester for Windows and RHEL / Oracle Linux
 ### SSO auto-login wallets only are allowed, and database version 11g+
-##### This in no way represents offical Oracle documentation, and views expressed are my own and do not represent anyone else
 
-This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
+This is a copy of aimtiaz11's JDBC tester, but his product did not work with SSL auto-login (passwordless) logins.
+
+Nothing else online could be found, so I edited his to reflect these changes.
+
+It will **ONLY** work with SSL passwordless JDBC client connect strings and a cwallet.sso file that is tied to your database with a CN credential as this program utilizes CN authentication only, without it will fail.
 https://github.com/aimtiaz11/oracle-jdbc-tester
 
-### PRE-REQS
-###### WALLET DIRECTORY NEEDS TO BE IN SAME DIRECTORY AS JAR FILE
+### PRE-REQS 
+##### For both WINDOWS and LINUX
+WALLET ***DIRECTORY*** NEEDS TO BE IN SAME DIRECTORY AS JAR FILE
 e.g.
 ```
 ls
@@ -14,7 +19,16 @@ wallet noah-ssl-jdbc-tester-1.4.jar
 ls wallet/
 cwallet.sso  cwallet.sso.lck
 ```
-Do some yum installs
+##### For the DATABASE SERVER
+If your ***database server*** IPTABLES is blocking your SSL port, you need to unblock it and save the iptables
+
+iptables is enabled by default on Oracle Linux DB instances provisioned in OCI, so this is a must do step
+```
+iptables -I INPUT -p tcp --dport <PORT> -j ACCEPT
+service iptables save
+```
+
+##### LINUX 
 ```
 yum install java -y
 yum install telnet -y
@@ -22,31 +36,45 @@ yum install java-1.8.0-openjdk-devel -y
 yum install jre1.8.x86_64 -y 
 yum install jdk-16.x86_64 -y
 ```
-Allow SSL port on database server's iptables
+
+##### WINDOWS
 ```
-iptables -I INPUT -p tcp --dport <PORT> -j ACCEPT
-service iptables save
+jre-8u291-windows-x64
+jdk-16.0.1_windows-x64_bin
+https://www.java.com/en/download/
+https://www.oracle.com/java/technologies/javase-jdk16-downloads.html
 ```
 
-# JAR command to execute
-###### Must specify the connect string with the SSL_SERVER_CERT_DN parameter or it will fail!
 
-For Linux
+
+### (RECOMMENDED) Downloading the .jar file
+#### Step 1
+##### Download the .jar file
+https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.4
+
+***Linux*** you can use ***wget***
+```
+wget https://github.com/LotToLearn/SSL_Tester_JDBC/releases/download/1.4/noah-ssl-jdbc-tester-1.4.jar
+```
+
+#### Step 2
+##### Make sure a ***wallet*** directory (match case) is in the ***directory where your .jar is located***
+
+Put your ***cwallet.sso*** inside the ***wallet directory***
+
+#### Step 3
+##### Execute, Syntax is important as it's different for Windows/Linux
+For ***LINUX***
 ```java -jar noah-ssl-jdbc-tester-1.4.jar jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=<HOSTNAME>)(PORT=<SSLPORT>))(CONNECT_DATA=(SERVICE_NAME=<SERVICENAME>))(SECURITY=(SSL_SERVER_CERT_DN='<CERT_DN_INFO>')))```
 
-For Windows
+For ***WINDOWS***
 ```
 java -jar noah-ssl-jdbc-tester-1.4.jar 'jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=tcps)(HOST=<HOSTNAME>)(PORT=<SSLPORT>))(CONNECT_DATA=(SERVICE_NAME=<SERVICENAME>))(SECURITY=(SSL_SERVER_CERT_DN="<CERT_DN_INFO>")))'
 ```
 
-### Download release to run quick
-https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.4
-```
-wget https://github.com/LotToLearn/SSL_Tester_JDBC/releases/download/1.3/noah-ssl-jdbc-tester-1.3.jar
-```
-Make a directory called "wallet" in the same directory as the Java, and put your SSO key inside
 
-### Manual install 
+
+### Manual install (ONLY FOR LINUX FOR NOW, WINDOWS WIP!!!)
 Install Maven
 ```
 mkdir /usr/local/apache-maven
