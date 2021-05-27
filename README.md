@@ -1,4 +1,5 @@
-# Oracle SSL JDBC Tester
+# Oracle SSL JDBC Tester for Windows and RHEL / Oracle Linux
+### SSO auto-login wallets only are allowed, and database version 11g+
 ##### This in no way represents offical Oracle documentation, and views expressed are my own and do not represent anyone else
 
 This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
