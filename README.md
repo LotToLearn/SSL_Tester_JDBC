@@ -39,7 +39,7 @@ java -jar noah-ssl-jdbc-tester-1.4.jar 'jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=
 ```
 
 ### Download release to run quick
-https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.3
+https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.4
 ```
 wget https://github.com/LotToLearn/SSL_Tester_JDBC/releases/download/1.3/noah-ssl-jdbc-tester-1.3.jar
 ```
