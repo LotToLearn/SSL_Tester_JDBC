@@ -5,14 +5,13 @@ This is a copy of aimtiaz11's JDBC tester, but ONLY for SSL (with SSO wallet)
 https://github.com/aimtiaz11/oracle-jdbc-tester
 
 ### PRE-REQS
-###### SSO WALLET NEEDS TO BE IN /usr/lib/oracle/11.2/client64/lib/network/admin DIRECTORY 
-
-Create wallet directory, and add .sso wallet (auto_login)
+###### WALLET DIRECTORY NEEDS TO BE IN SAME DIRECTORY AS JAR FILE
+e.g.
 ```
-sudo mkdir -p /usr/lib/oracle/11.2/client64/lib/network/admin
-cd /usr/lib/oracle/11.2/client64/lib/network/admin
-ls /usr/lib/oracle/11.2/client64/lib/network/admin
-cwallet.sso
+ls
+wallet noah-ssl-jdbc-tester-1.4.jar
+ls wallet/
+cwallet.sso  cwallet.sso.lck
 ```
 Do some yum installs
 ```
@@ -37,6 +36,7 @@ https://github.com/LotToLearn/SSL_Tester_JDBC/releases/tag/1.3
 ```
 wget https://github.com/LotToLearn/SSL_Tester_JDBC/releases/download/1.3/noah-ssl-jdbc-tester-1.3.jar
 ```
+Make a directory called "wallet" in the same directory as the Java, and put your SSO key inside
 
 ### Manual install 
 Install Maven
